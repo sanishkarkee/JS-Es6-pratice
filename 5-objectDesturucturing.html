@@ -1,3 +1,19 @@
 <script>
-    
+  const bioData = {
+    name: 'vinod',
+    age: 26,
+    deg: 'MCS',
+    hobb: {
+      first: 'playing',
+      sec: 'youtube videos',
+    },
+  };
+
+  //   Object destructuring // let ma j name xa tei name nai console ma use garnu parxa
+  let { name: myname, age, deg, hobb } = bioData;
+
+  //   Old way
+  console.log(
+    `My name is ${myname}, my age is: ${age} & my highest degree is: ${deg}. I love making: ${hobb.sec}`
+  );
 </script>
