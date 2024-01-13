@@ -1,0 +1,21 @@
+<script>
+  // Exercise 1 : Program to swap two numbers without third variable
+
+  let a = 5;
+  let b = 10;
+
+    let temp = a;
+    a = b;
+    b = temp;
+
+    console.log(`value of a is:${a} & value of b is: ${b}`);
+  // Old method
+  //   let temp = a;
+  //   a = b;
+  //   b = temp;
+
+  // New method
+  [a, b] = [b, a];
+
+  console.log(`value of a is:${a} & value of b is: ${b}`);
+</script>

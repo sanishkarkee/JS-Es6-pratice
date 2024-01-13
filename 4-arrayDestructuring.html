@@ -1,0 +1,19 @@
+<script>
+  const myproglang = ['php', 'JS', 'c', 'python', 'java'];
+
+  // Es5
+  //   var top1 = myproglang[0];
+  //   var top2 = myproglang[1];
+  //   var top3 = myproglang[2];
+  //   console.log('My favourite programming langauge is: ' + top1);
+
+  //   Es6
+  //   let [top1, top2, top3, top5, top6] = myproglang;
+  //   console.log(`The best language is: ${top2}`);
+
+  console.log(myproglang.length, typeof myproglang.length);
+
+  //   If i need to select first and last value of the array using array destructuring
+  let [topFirst, , , , topLast] = myproglang;
+  console.log(`first is: ${topFirst} & last is: ${topLast}`);
+</script>
