@@ -13,5 +13,26 @@ console.log(multiply(5));
 
 -->
 <script>
-    
+  // Multiplication of two numbers
+
+  // function mul(a, b = 2) {
+  //   console.log(a * b);
+  // }
+
+  // mul(4);
+
+  // ------------------
+
+  // function mul(a, b) {
+  //   b = typeof b !== 'undefined' ? b : 2;
+  //   console.log('Result is:', a * b);
+  // }
+  // mul(4);
+
+  //----------- OR in ES6 -----------
+  const mul = (a, b = 5) => {
+    console.log(`Result of multiplication is: ${a * b}`);
+  };
+  mul(2); // O/p: 10
+  mul(10, 10); //O/p: 100
 </script>
