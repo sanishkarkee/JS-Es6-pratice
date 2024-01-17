@@ -1,0 +1,36 @@
+<!-- Rest Parameter:
+            It allows a function to treat an INDEFINITE NO OF ARGUEMENTS as an ARRAY.
+-->
+
+<script>
+  //---- Question:  Sum of two numbers
+
+  //---- Es5
+  //   function sum(a, b) {
+  //     console.log('Result is: ', a + b);
+  //   }
+  //   sum(1, 2, 3, 4, 5, 6);
+
+  //---- Es6 Main concept
+  // yo ...inputs ma [1,2,3,4,5,6] store hunxa
+  const sum = (...inputs) => {
+    console.log(...inputs); // (...inputs) ma => 1 2 3 4 5 6 hunxa bhane (inputs) ma [1,2,3,4,5,6] hunxa
+    let total = 0;
+    for (let i of inputs) {
+      total = total + i;
+    }
+    console.log(`Result is: ${total}`);
+  };
+
+  sum(1, 2, 3, 4, 5, 6);
+
+  //   Other concepts: rest with function and other arguements
+  const fun = (a, b, ...c) => {
+    console.log(`${a} ${b}`);
+    console.log(c);
+    console.log(c[0]);
+    console.log(c.length);
+    console.log(c.indexOf('Edan'));
+  };
+  fun('Ronaldo', 'Neymar', 'Pele', 'Messi', 'Edan');
+</script>
