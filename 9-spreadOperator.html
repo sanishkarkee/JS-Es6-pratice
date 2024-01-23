@@ -1,0 +1,43 @@
+<!-- Normally bujda chai ,
+----REST operator ma chai FUNCTION CALL ma chai NUMBERS pass garinthyo ani
+    MAIN FUNCTION ma chai tyo numbers ARRAY ko type ma receive hunthyo
+----Tara, SPREAD opertators ma chai Function call ma chai ARRAY pass garinxa ani MAIN FUNCTION ma chai data as a
+    Number ma receive hunxa -->
+
+<script>
+  // Question: Addition of three numbers
+
+  //------------Es5------------
+  //   function sum(a, b, c) {
+  //     console.log('The sum is: ', a + b + c);
+  //   }
+  //   //   sum(1, 2, 3);
+
+  //   var arrVar = [1, 2, 3];
+  //   sum.apply(null, arrVar);
+
+  //------------ES6------------
+  //   const sum = (a, b, c) => {
+  //     console.log(`Required output is: ${a + b + c}`);
+  //   };
+
+  //   var arrVal = [5, 2, 3];
+
+  //   console.log(...arrVal);
+
+  //   sum(...arrVal);
+
+  //--------------------------Replace concat()
+  //   let arr1 = [1, 2, 3];
+  //   let arr2 = [4, 5, 6];
+
+  //   //   arr1 = arr1.concat(arr2); yesko alternative ma tala ko code le kaam garxa
+  //   arr1 = [...arr1, ...arr2];
+  //   console.log(arr1);
+
+  //--------------------------Replace copy()
+  let arrCopy1 = [1, 2, 3];
+  let arrCopy2 = [...arrCopy1, 4, 5];
+  console.log(arrCopy2);
+  console.log(arrCopy1);
+</script>
