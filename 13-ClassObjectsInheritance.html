@@ -1,0 +1,19 @@
+<script>
+  //   function students() {}
+  class students {
+    // ** properties haru lai chai constructor bhitra define garnu parxa **
+    constructor(name, age, classes) {
+      this.myname = name;
+      this.myage = age;
+      this.myclass = classes;
+    }
+    biodata() {
+      console.log(
+        `Hi my name is ${this.myname}. I am ${this.myage} years old. I read in class ${this.myclass}. `
+      );
+    }
+  }
+
+  let obj1 = new students('Vinod', 12, 6);
+  obj1.biodata();
+</script>
