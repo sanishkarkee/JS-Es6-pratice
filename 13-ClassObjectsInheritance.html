@@ -9,11 +9,25 @@
     }
     biodata() {
       console.log(
-        `Hi my name is ${this.myname}. I am ${this.myage} years old. I read in class ${this.myclass}. `
+        `Hello my name is: ${this.myname}. I am ${this.myage}. I am studying ${this.myclass}.I am playing ${this.mygame}.`
       );
     }
   }
 
-  let obj1 = new students('Vinod', 12, 6);
-  obj1.biodata();
+  class player extends students {
+    constructor(name, age, classes, game) {
+      super(name, age, classes); //yo chai derived constructor ma 'this' property use garnu bhanda paila nai call garnu parxa/ ra parent calss ko properties haru pass garnu parxa
+      this.mygame = game;
+    }
+
+    player_biodata() {
+      return `${super.biodata()}`;
+    }
+  }
+
+  // let obj1 = new students('Vinod', 24, 'Engineering');
+
+  //---- Parent class (students) k property inherit garxa child class(player) le
+  let obj1 = new player('Vinod', 24, 'Engineering', 'GTA');
+  console.log(obj1.player_biodata());
 </script>
