@@ -1,0 +1,102 @@
+<!-- NOTE: Youtube channel: chaiaurcode // https://www.youtube.com/watch?v=NJwRQgsu1Q8 -->
+<!-- There are 2 part:
+                      1] Creating Promise
+                      2]Consuming Promise
+-->
+
+<script>
+  //----------------CASE 1: promise assigned to variable
+
+  //---- Creating promise
+  const promiseOne = new Promise((resolve, reject) => {
+    //Do an async task
+
+    setTimeout(() => {
+      console.log('Async task is complete');
+
+      resolve(); //yo gare paxi chai mathi ko func parameter ma bhayeko"resolve" ra tala consuming promise ma bhayeko "then" ek aapas ma connect hunxa
+    }, 1000);
+  });
+
+  //---- Consuming promise
+  promiseOne.then(() => {
+    console.log('Promise Consumed');
+  });
+
+  //----------------CASE 2: promise not assigned to variable(yo case ma promise create garda .then() le connect gardine)
+
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('async task 2');
+
+      resolve();
+    }, 2000);
+  }).then(() => {
+    console.log('Async 2 resolved');
+  });
+
+  //----------------CASE 3: promise bata .then le data kasari linxa
+
+  const promiseThree = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ username: 'chai', email: 'chai@example.com' }); //yo resolve ma pass gareko parameter jaile pani tala .then ma payinxa
+    }, 3000);
+  });
+
+  promiseThree.then((user) => {
+    console.log(user, typeof user);
+  });
+
+  //----------------CASE4:  Promise chaining concept plus reject() case
+  const promiseFour = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let error = true;
+
+      if (!error) {
+        resolve({ username: 'hitesh', password: '123' });
+      } else {
+        reject('ERROR: Something went wrong');
+      }
+    }, 4000);
+  });
+
+  // .then()-> error na huda resolve() lai,, .catch()-> error huda reject() lai
+  promiseFour
+    .then((user) => {
+      console.log(user);
+      return user.username;
+    })
+    //yo TALA ko .then() ma chai MATHI ko .then() le return garkeo value aauxa
+    .then((username) => {
+      console.log(username);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally(() => {
+      console.log('The promise is either resolved or rejected');
+    });
+
+  //----------------CASE5: ASYNC/AWAIT (Try/Catch)
+  const promiseFive = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let error = true;
+      if (!error) {
+        resolve({ username: 'javscript', password: '123' });
+      } else {
+        reject('ERROR: JS went wrong');
+      }
+    }, 5000);
+  });
+
+  async function consumePromiseFive() {
+    try {
+      const response = await promiseFive;
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  consumePromiseFive();
+</script>
