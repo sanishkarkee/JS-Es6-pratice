@@ -1,7 +1,7 @@
 <!-- NOTE: Youtube channel: chaiaurcode // https://www.youtube.com/watch?v=NJwRQgsu1Q8 -->
 <!-- There are 2 part:
                       1] Creating Promise
-                      2]Consuming Promise
+                      2]Consuming Promise/Receving value
 -->
 
 <script>
@@ -18,7 +18,7 @@
     }, 1000);
   });
 
-  //---- Consuming promise
+  //---- Consuming promise/ Receiving value
   promiseOne.then(() => {
     console.log('Promise Consumed');
   });
@@ -35,11 +35,11 @@
     console.log('Async 2 resolved');
   });
 
-  //----------------CASE 3: promise bata .then le data kasari linxa
+  //----------------CASE 3: promise bata .then() le data kasari linxa
 
   const promiseThree = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve({ username: 'chai', email: 'chai@example.com' }); //yo resolve ma pass gareko parameter jaile pani tala .then ma payinxa
+      resolve({ username: 'chai', email: 'chai@example.com' }); //yo resolve ma pass gareko parameter ko value jaile pani tala .then() le receive garxa
     }, 3000);
   });
 
