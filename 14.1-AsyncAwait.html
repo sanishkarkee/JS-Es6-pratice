@@ -29,15 +29,25 @@
   };
 
   //promise consume/receiving value
-  pobj1
-    .then((rollno) => {
-      console.log(rollno, typeof rollno);
-      return getBioData(rollno[1]);
-    })
-    .then((kuchbhi) => {
-      console.log(kuchbhi);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  //   pobj1
+  //     .then((rollno) => {
+  //       console.log(rollno, typeof rollno);
+  //       return getBioData(rollno[1]);
+  //     })
+  //     .then((kuchbhi) => {
+  //       console.log(kuchbhi);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+
+  async function getData() {
+    const rollnodata = await pobj1;
+    console.log(rollnodata);
+
+    const biodatas = await getBioData(rollnodata[3]);
+    console.log(biodatas);
+  }
+
+  getData();
 </script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks: change bg color</title>
+    <style>
+      body {
+        background-color: #353135;
+      }
+
+      h1 {
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Start should change the background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+      // first task: Generate a random color
+
+      const randomColor = () => {
+        const hex = '0123456789ABCDEF';
+        let color = '#';
+
+        for (let i = 0; i < 6; i++) {
+          color += hex[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+      };
+
+      let intervalId; //global scope/declare gareko so that every function ma easily use garna sakiyos bhanera
+
+      const startchangingColor = () => {
+        if (!intervalId) {
+          // intervalIs is null
+          intervalId = setInterval(changeBgcolor, 1000);
+        }
+
+        function changeBgcolor() {
+          document.body.style.backgroundColor = randomColor();
+        }
+      };
+
+      const stopchangingColor = () => {
+        clearInterval(intervalId);
+        intervalId = null;
+      };
+
+      document
+        .querySelector('#start')
+        .addEventListener('click', startchangingColor);
+
+      document
+        .querySelector('#stop')
+        .addEventListener('click', stopchangingColor);
+
+      // console.log(randomColor());
+
+      // console.log(Math.floor(Math.random() * 16));  //--generates random color upto 16
+    </script>
+  </body>
+</html>
+
+<!-- Notes:
+  1. //math.random() le random vaue generate garxa
+  2. (Math.random() * 10 )  garyo bhane chai (* 10) le  values upto 10 samma payinxa,Eg: 0,1,2,....,10
+-->

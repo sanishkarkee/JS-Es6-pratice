@@ -1,0 +1,30 @@
+<!-- Youtube Link: https://www.youtube.com/watch?v=efrW5-IYoCU&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=38 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await</title>
+  </head>
+  <body>
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+      const sayHitesh = () => {
+        console.log('Hitesh');
+      };
+
+      const changeText = () => {
+        document.querySelector('h1').innerHTML = 'Best JS Series';
+      };
+
+      const changeMe = setTimeout(changeText, 2000);
+
+      document.querySelector('#stop').addEventListener('click', () => {
+        clearTimeout(changeMe);
+        console.log('Stopped');
+      });
+    </script>
+  </body>
+</html>
