@@ -4,4 +4,24 @@
   FINALLY: it defines a code block to run regardless of the result.
  -->
 
-<script></script>
+<script>
+  //----Example1: (CodeWithHarry)
+  let a = prompt('Enter first number');
+  let b = prompt('Enter second number');
+
+  if (isNaN(a) || isNaN(b)) {
+    throw SyntaxError('Sorry this is not allowed.');
+  }
+
+  let sum = parseInt(a) + parseInt(b);
+
+  //Error is handled using Try Catch
+
+  try {
+    console.log(`The sum is: ${sum * x}`);
+  } catch (error) {
+    console.log('Error aa gaya bhai');
+  } finally {
+    console.log('Files are closed and db conncetion is being closed.');
+  }
+</script>
