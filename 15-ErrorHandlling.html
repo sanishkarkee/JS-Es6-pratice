@@ -5,23 +5,65 @@
  -->
 
 <script>
-  //----Example1: (CodeWithHarry)
-  let a = prompt('Enter first number');
-  let b = prompt('Enter second number');
+  //----Example 1: (CodeWithHarry)
+  // let a = prompt('Enter first number');
+  // let b = prompt('Enter second number');
 
-  if (isNaN(a) || isNaN(b)) {
-    throw SyntaxError('Sorry this is not allowed.');
-  }
+  // if (isNaN(a) || isNaN(b)) {
+  //   throw SyntaxError('Sorry this is not allowed.');
+  // }
 
-  let sum = parseInt(a) + parseInt(b);
+  // let sum = parseInt(a) + parseInt(b);
 
-  //Error is handled using Try Catch
+  // //Error is handled using Try Catch
 
-  try {
-    console.log(`The sum is: ${sum * x}`);
-  } catch (error) {
-    console.log('Error aa gaya bhai');
-  } finally {
-    console.log('Files are closed and db conncetion is being closed.');
-  }
+  // try {
+  //   console.log(`The sum is: ${sum * x}`);
+  // } catch (error) {
+  //   console.log('Error aa gaya bhai');
+  // } finally {
+  //   console.log('Files are closed and db conncetion is being closed.');
+  // }
+
+  // ==================================================================================================
+
+  // Example 2: (CodeWithHarry)
+
+  setTimeout(() => {
+    console.log('Hacking wifi.... Please Wait...');
+  }, 1000);
+
+  //----PROBLEM-----> TryCatch bhitra synchronus task matrai garinxa// asynchronuous task ko lagi chia tyo bhitra TryCatch use garne
+  //---->since setTimeout is asynchronous  ,it gives error
+  // try {
+  //   setTimeout(() => {
+  //     console.log(rahul);    // yo line of code wrong xa because rahul is not defined
+  //   }, 100);
+  // } catch (err) {
+  //   console.log('Balle Balle ' + err);
+  // }
+
+  // ----SOLUTION-----> Solution to above condition is,Asunchronous function bhitra TryCatch use garne
+
+  setTimeout(() => {
+    try {
+      console.log(rahul);
+    } catch (err) {
+      console.log(`Balle Balle ${err}`);
+    }
+  }, 100);
+
+  setTimeout(() => {
+    console.log('Fetching username and password.... Please Wait...');
+  }, 2000);
+
+  setTimeout(() => {
+    console.log('Hacking Rahuls facebook id .... Please Wait...');
+  }, 3000);
+
+  setTimeout(() => {
+    console.log(
+      'Username and password of Rahul (+956456746xxxx) fetched .... Please Wait...'
+    );
+  }, 4000);
 </script>

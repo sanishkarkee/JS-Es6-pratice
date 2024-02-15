@@ -1,0 +1,18 @@
+<script>
+  // this api is discontinued so wont work
+
+  const getcovidApi = async () => {
+    const jsondata = await fetch('https://api.covid19api.com/summary');
+
+    const jsdata = await jsondata.json();
+
+    // console.log(jsdata);
+    const countryName = jsdata.Countries[101];
+
+    console.log(
+      `The name of the country is${countryName.country}. Total confirmed cases here is ${countryName.TotalConfirmed}.and the total deaths here is ${countryName.TotalDeaths}`
+    );
+  };
+
+  getcovidApi();
+</script>
